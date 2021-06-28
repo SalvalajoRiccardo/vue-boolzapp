@@ -4,9 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <title>boolzapp</title>
 </head>
 <body>
+    <div class="container" id="app">
+        <header class="flex">
+            <div class="flex justy-space" id="utente">
+                <div class="box-ut flex align-center">
+                    <img src="img/avatar_2.jpg" alt="utente">
+                    <h4>Nome Utente</h4> 
+                </div>
+                <div class="box-ut flex align-center justy-end opa-50">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+
+            </div>
+
+            <div id="committer" class="flex justy-space">
+                
+                <div class="box-ut flex align-center">
+                    <img src="img/avatar_2.jpg" alt="utente">
+                    <div>
+                        <h4>Nome Utente</h4> 
+                        <span class="opa-50">Ultimi accesso oggi alle</span>
+                    </div>
+                </div>
+
+                <div class="box-ut flex align-center justy-end opa-50">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+                
+            </div>
+
+        </header>
     
+        <main>
+            <div id="contatti">
+                <div id="notifiche">
+        
+                </div>
+                <nav id="nav">
+                    <div id="ricerca">
+
+                    </div>
+                    <div id="lista">
+                        
+                    </div>
+                </nav>
+
+            </div>
+        </main>
+
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -3,3 +3,81 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* commons */
+.flex {
+    display: flex;
+}
+
+.justy-center {
+    justify-content: center;
+}
+
+.justy-space {
+    justify-content: space-around;
+}
+
+.justy-end {
+    justify-content: flex-end;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.opa-50 {
+    opacity: 50%;
+}
+
+/* body */
+body {
+    background-color: lightgrey;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container {
+    height: 120px;
+    background-color:teal;
+    position: relative;
+}
+
+/* header */
+
+header {
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    top: 20px;
+    left: 10%;
+}
+
+header img{
+    width: 70px;
+    border-radius: 50%;
+}
+
+.box-ut {
+    width: 100%;
+}
+
+header i{
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+/* utente */
+#utente {
+    width: 30%;
+    height: 80px;
+    background-color: lightgray;
+    padding: 5px 10px;
+    border-right: 1px solid rgb(182, 182, 182);
+}
+
+/* committer */
+
+#committer {
+    width: 69%;
+    height: 80px;
+    background-color: lightgray;
+    padding: 5px 10px;
+}
