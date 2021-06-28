@@ -17,7 +17,7 @@
                     <img src="img/avatar_2.jpg" alt="utente">
                     <h4>Nome Utente</h4> 
                 </div>
-                <div class="box-ut flex align-center justy-end opa-30">
+                <div class="icons box-ut flex align-center justy-end opa-30">
                     <i class="fas fa-circle-notch"></i>
                     <i class="fas fa-comment-alt"></i>
                     <i class="fas fa-ellipsis-v"></i>
@@ -47,23 +47,26 @@
     
         <main>
             <div id="contatti">
-                <div id="notifiche" class="clearfix">
-                    <div id="bell">
+                <div id="notifiche" class="flex align-center ">
+
+                    <div id="bell" >
                         <i class="fas fa-bell-slash"></i>
                     </div>
 
                     <div>
                         <h4>Ricevi notifiche di nuovi messaggi</h4>
-                        <a href="#">Attiva notifiche desktop</a>
+                        <a class="opa-30" href="#">Attiva notifiche desktop</a>
                     </div>
                     
                 </div>
                 <nav id="nav">
-                    <div id="ricerca">
 
+                    <div id="ricerca">
+                        <input id="search" type="text" placeholder=" &#x1f50d; Cerca o inizia una nuova chat">
                     </div>
+
                     <div id="lista">
-                        
+                        <div class="flex" v-for='item in contacts'><img :src="item.avatar" alt=""><h4>{{item.name}}</h4></div>
                     </div>
                 </nav>
 

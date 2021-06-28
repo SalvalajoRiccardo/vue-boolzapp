@@ -8,6 +8,10 @@
     display: flex;
 }
 
+.line-block {
+    display: inline-block;
+}
+
 .justy-center {
     justify-content: center;
 }
@@ -37,30 +41,26 @@
 /* body */
 body {
     background-color: #d7dbd7;
-    height: 100vh;
-    width: 100vw;
+    height: 100vh ;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .container {
     height: 120px;
     background-color:#009688;
-    position: relative;
+    padding-top: 20px;
 }
 
 /* header */
 
 header {
-    width: 80vw;
+    width: 80%;
     margin: 0 auto;
-    position: absolute;
-    top: 20px;
-    left: 10%;
     min-width: 900px;
 }
 
 header img{
-    width: 70px;
+    width: 60px;
     border-radius: 50%;
 }
 
@@ -73,20 +73,27 @@ header i{
     width: 100%;
 }
 
+.icons {
+    width: 50px;
+}
 
 /* utente */
 #utente {
-    min-width: 30%;
+    min-width: 350px;
+    width: 30%;
     height: 80px;
+    min-height: 80px;
     background-color: #eaeaea;
     padding: 5px 10px;
-    border-right: 1px solid rgb(182, 182, 182);
+    border-right: 1px solid #dddddd;
+    flex-shrink: 0;
 }
 
 /* committer */
 
 #committer {
-    min-width: 70%;
+    width: 70%;
+    min-width: 500px;
     height: 80px;
     background-color: #eaeaea;
     padding: 5px 10px;
@@ -95,35 +102,81 @@ header i{
 /* main  */
 
 main {
-    width: 80vw;
+    width: 80%;
+    min-width: 900px;
+    height: calc(100vh - 150px);
     margin: 0 auto;
-    position: absolute;
-    top: 100px;
-    left: 10%;
-    min-width: 950px;
+    background-color: #fafafa;
 }
 
 main img{
-    width: 70px;
+    width: 60px;
     border-radius: 50%;
 }
+
+/* contatti */
+#contatti {
+    min-width: 350px;
+    width: 30%;
+    background-color: #eaeaea;
+    border-right: 1px solid #dddddd;
+    flex-shrink: 0;
+}
+
 
 /* notifiche */
 #notifiche {
     height:80px;
-    width: 30%;
+    width: 100%;
     background-color: #8ad3f1;
-    float: left;
     padding: 10px;
+    font-size: 14px;
+    
 }
 
 #bell {
-    width: 56px;
+    width: 50px;
+    height: 50px;
     color: #8ad3f1;
     background-color: white;
     padding: 5px;
     border-radius: 50%;
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
+    margin-right: 20px;
+}
+
+#notifiche a{
+    color: black;
+}
+
+/* barra della ricerca */
+
+#ricerca {
+    padding: 5px;
+}
+
+#ricerca input {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #dddddd;
+}
+
+#lista {
+    overflow-x:hidden;
+    overflow-y:scroll;
+    height: calc(100vh - 270px);
+}
+
+#lista div{
+    width: 100%;
+    border-bottom: 1px solid #dddddd;
+    padding: 10px;
+    background-color: white;
+    
+}
+
+#lista div:hover {
+    opacity: 0.5;
 }
 
