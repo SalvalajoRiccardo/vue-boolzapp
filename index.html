@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <title>boolzapp</title>
 </head>
 <body>
@@ -28,9 +28,9 @@
             <div id="committer" class="flex justy-space">
                 
                 <div class="box-ut flex align-center">
-                    <img src="img/avatar_2.jpg" alt="utente">
+                    <img class="avatar" :src="contacts[contatore].avatar" alt="user avatar">
                     <div>
-                        <h4>Nome Utente</h4> 
+                        <h4 id="nomechat">{{contacts[contatore].name}}</h4> 
                         <span class="opa-30">Ultimi accesso oggi alle</span>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
 
         </header>
     
-        <main>
+        <main class="flex">
             <div id="contatti">
                 <div id="notifiche" class="flex align-center ">
 
@@ -61,14 +61,37 @@
                 </div>
                 <nav id="nav">
 
-                    <div id="ricerca">
-                        <input id="search" type="text" placeholder=" &#x1f50d; Cerca o inizia una nuova chat">
-                    </div>
-
                     <div id="lista">
-                        <div class="flex" v-for='item in contacts'><img :src="item.avatar" alt=""><h4>{{item.name}}</h4></div>
+
+                        <div id="ricerca">
+                            <label for="search"><i class="fas fa-search"></i></label>
+                            <input id="search" type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+
+                        <div @click="insert(index)" class="flex" v-for="(item, index) in contacts"><img :src="item.avatar" alt="">
+                            <h4>{{item.name}}</h4>
+                        </div>
                     </div>
                 </nav>
+
+            </div>
+
+            <div id="chat">
+                <div id="chat-box">
+                    <!-- <div v-if="contacts[index].visible = true">
+                        <div v-for ="(obj index) in contacts.messages">
+                            <span>{{obj.text}}</span>
+                            <span>{{obj.date}}</span>
+                        </div>
+                    </div> -->
+
+                </div>
+
+                <div class="flex align-center justy-bet" id="chat-bar">
+                    <i class="far fa-smile"></i>
+                    <input id="chat-log" type="text">
+                    <i class="fas fa-microphone"></i>
+                </div>
 
             </div>
         </main>

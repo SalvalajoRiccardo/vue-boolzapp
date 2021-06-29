@@ -20,6 +20,10 @@
     justify-content: space-around;
 }
 
+.justy-bet {
+    justify-content: space-between;
+}
+
 .justy-end {
     justify-content: flex-end;
 }
@@ -156,19 +160,27 @@ main img{
     padding: 5px;
 }
 
+#ricerca label {
+    display: inline-block;
+    height: 30px;
+    width: 15%;
+    text-align: center;
+    opacity: 30%;
+}
+
 #ricerca input {
-    width: 100%;
+    width: 70%;
     height: 30px;
     border: 1px solid #dddddd;
 }
-
+/* lista contatti */
 #lista {
     overflow-x:hidden;
     overflow-y:scroll;
     height: calc(100vh - 270px);
 }
 
-#lista div{
+#lista .flex{
     width: 100%;
     border-bottom: 1px solid #dddddd;
     padding: 10px;
@@ -176,7 +188,48 @@ main img{
     
 }
 
-#lista div:hover {
+#lista .flex:hover {
     opacity: 0.5;
 }
 
+/* chat block */
+
+#chat {
+    width: 70%;
+    min-width: 500px;
+    background-color: #eaeaea;
+}
+
+#chat-box {
+    width: 100%;
+    height: calc(100% - 80px) ;
+    background-image: url("../img/mine.jpg");
+    background-position: center;
+    background-size: auto;
+}
+
+#chat-bar {
+    background-color: #f3eeea;
+    height: 80px;
+    padding: 20px;
+}
+
+#chat-bar i{
+    font-size: 30px;
+    opacity: 30%;
+}
+#chat-bar input{
+    width: 80%;
+    height: 30px;
+}
+
+/* common chat */
+
+.sent {
+    justify-content: end;
+    background-color: #009688;
+}
+
+.recived {
+    background-color: white ;
+}
