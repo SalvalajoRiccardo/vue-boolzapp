@@ -11,17 +11,17 @@
                     messages: [
                         {
                             text: 'ciao tulio, come va?',
-                            Date: '10/01/2020 15:30:55',
+                            date: '10/01/2020 15:30:55',
                             status: 'sent'
                         },
                         {
                             text: 'tutto bene dai, e tu?',
-                            Date: '11/01/2020 17:30:50',
+                            date: '11/01/2020 17:30:50',
                             status: 'rec'
                         },
                         {
                             text: 'salutami i ragazzi',
-                            Date: '11/01/2020 17:31:15',
+                            date: '11/01/2020 17:31:15',
                             status: 'rec'
                         },
                     ]

@@ -78,13 +78,13 @@
 
             <div id="chat">
                 <div id="chat-box">
-                    <!-- <div v-if="contacts[index].visible = true">
-                        <div v-for ="(obj index) in contacts.messages">
-                            <span>{{obj.text}}</span>
-                            <span>{{obj.date}}</span>
-                        </div>
-                    </div> -->
 
+                    <div class="flex" v-for="obj in contacts[contatore].messages">
+                        <div class="box-text" :class="(obj.status == 'sent') ? ' sent' : ' recived'">
+                            <h4>{{obj.text}}</h4><span>{{obj.date}}</span>
+                        </div>
+                    </div>
+               
                 </div>
 
                 <div class="flex align-center justy-bet" id="chat-bar">

@@ -206,6 +206,32 @@ main img{
     background-image: url("../img/mine.jpg");
     background-position: center;
     background-size: auto;
+    padding: 50px;
+    
+}
+
+#chat-box .box-text {
+    width: 200px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.box-text {
+    position: relative;
+}
+
+.box-text h4{
+    margin-bottom: 10px;
+}
+
+.box-text span {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    opacity: 30%;
+    font-size: 10px;
+    
 }
 
 #chat-bar {
@@ -223,11 +249,13 @@ main img{
     height: 30px;
 }
 
+
+
 /* common chat */
 
 .sent {
-    justify-content: end;
-    background-color: #009688;
+    margin-left: auto;
+    background-color: #4de055;
 }
 
 .recived {
