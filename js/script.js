@@ -158,6 +158,7 @@
             insert(i){
                 this.contatore = i;
             },
+            // scrivi messaggio
             addMex(obj) {
                 if ( obj ){
                     this.contacts[this.contatore].messages.push({text:this.newMex, date:this.momento(), status: 'sent'});
@@ -167,11 +168,12 @@
                 }
             },
 
+            // add data momento
             momento(){
                 return dayjs().format('DD/MM/YYYY') + ' ' + dayjs().format('HH:mm:ss')
             },
 
-            
+            // func filtro nomi
             filterUser() {
                 this.contacts.forEach(element => {
                     let nameLow = element.name.toLowerCase();
