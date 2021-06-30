@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <title>boolzapp</title>
 </head>
 <body>
@@ -67,14 +68,15 @@
                 </div>
                 <nav id="nav">
 
+                    <!-- barra di ricerca -->
                     <div id="lista">
 
                         <div id="ricerca">
                             <label for="search"><i class="fas fa-search"></i></label>
-                            <input id="search" type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input v-model="filtro" @keyup="filterUser()" id="search" type="text" placeholder="Cerca o inizia una nuova chat">
                         </div>
 
-                        <div @click="insert(index)" class="flex" v-for="(item, index) in contacts"><img :src="item.avatar" alt="">
+                        <div @click="insert(index)" class="flex" v-for="(item, index) in contacts" v-if="item.visible == true"><img :src="item.avatar" alt="contacts.name">
                             <h4>{{item.name}}</h4>
                         </div>
                     </div>
@@ -86,7 +88,6 @@
             <!-- sezione chat -->
             <div id="chat">
                 <div id="chat-box">
-
                     <div class="flex" v-for="obj in contacts[contatore].messages">
                         <div class="box-text" :class="(obj.status == 'sent') ? ' sent' : ' recived'">
                             <h4>{{obj.text}}</h4><span>{{obj.date}}</span>
@@ -98,7 +99,7 @@
                 <!-- chat input -->
                 <div class="flex align-center justy-bet" id="chat-bar">
                     <i class="far fa-smile"></i>
-                    <input id="chat-log" type="text">
+                    <input v-model="newMex" @keyup.enter="addMex(newMex)" id="chat-log" type="text">
                     <i class="fas fa-microphone"></i>
                 </div>
                 <!-- fine chat input -->

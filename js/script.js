@@ -3,6 +3,8 @@
         el: '#app',
         data: {
             contatore : 0,
+            newMex: '',
+            filtro: '',
             contacts : [
                 {
                     name: 'Tullio',
@@ -29,7 +31,7 @@
                 {
                     name: 'Giobanni',
                     avatar: 'img/avatar_3.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             text: 'ciao, come va?',
@@ -51,7 +53,7 @@
                 {
                     name: 'Danielo',
                     avatar: 'img/avatar_4.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             text: 'ciao, tutto bene con il vaccino?',
@@ -69,7 +71,7 @@
                 {
                     name: 'Marcolino',
                     avatar: 'img/avatar_5.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             text: 'ciao tulio, come va?',
@@ -86,7 +88,7 @@
                 {
                     name: 'Barbra',
                     avatar: 'img/avatar_6.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             text: 'ciao, ricordati di portare i bicchieri domani',
@@ -108,7 +110,7 @@
                 {
                     name: 'Jacobbe',
                     avatar: 'img/avatar_7.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             text: 'ciao jac, come va?',
@@ -135,7 +137,7 @@
                 {
                     name:'Cristina',
                     avatar: 'img/avatar_10.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             text: 'ciao cristina, non ho capito, puoi rispiegare?',
@@ -149,17 +151,44 @@
                         },
                     ]
                 },
-            ]
+            ],
         },
+
         methods: {
             insert(i){
                 this.contatore = i;
             },
-            change(i) {
-                this.contact[i].visible = true;
+            addMex(obj) {
+                if ( obj ){
+                    this.contacts[this.contatore].messages.push({text:this.newMex, date:this.momento(), status: 'sent'});
+                    this.newMex = '';
+
+                    setTimeout(function(){ app.contacts[app.contatore].messages.push({text:'ok', date:app.momento(), status: 'rec'})}, 1000);
+                }
+            },
+
+            momento(){
+                return dayjs().format('DD/MM/YYYY') + ' ' + dayjs().format('HH:mm:ss')
+            },
+
+            
+            filterUser() {
+                this.contacts.forEach(element => {
+                    let nameLow = element.name.toLowerCase();
+                    let filtroLow = this.filtro.toLowerCase();
+                    if(nameLow.includes(filtroLow) == true){
+                        element.visible = true;
+                    } else {
+                        element.visible = false;
+                    }
+                    
+                    console.log(element.visible);
+                });
             }
+            
         }
-      })
+        
+    })
 
 
     
