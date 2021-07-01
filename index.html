@@ -88,14 +88,14 @@
             <!-- sezione chat -->
             <div id="chat">
                 <div id="chat-box">
-                    <div class="flex" v-for="obj in contacts[contatore].messages">
+                    <div class="flex" v-for="(obj,index) in contacts[contatore].messages">
                         <div class="box-text" :class="(obj.status == 'sent') ? ' sent' : ' recived'">
                             <h4>{{obj.text}}</h4><span>{{obj.date}}</span>
                             <div>
                                 <i @click='obj.toggle = !obj.toggle'  class="fas fa-chevron-down"></i>
                                 <div class="tent" v-show='obj.toggle'>
                                     <h5>info messaggio</h5>
-                                    <h5>elimina messaggio</h5>
+                                    <h5 @click='remove(index)'>elimina messaggio</h5>
                                 </div>
                             </div>
                         </div>

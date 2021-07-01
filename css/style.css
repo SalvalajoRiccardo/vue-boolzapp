@@ -66,6 +66,7 @@ header {
 header img{
     width: 60px;
     border-radius: 50%;
+    margin-right: 10px;
 }
 
 header i{
@@ -144,7 +145,7 @@ main img{
     height: 50px;
     color: #8ad3f1;
     background-color: white;
-    padding: 5px;
+    padding: 10px;
     border-radius: 50%;
     font-size: 25px;
     text-align: center;
@@ -218,6 +219,10 @@ main img{
     padding: 10px;
 }
 
+#chat-box i {
+    cursor: pointer;
+}
+
 
 .box-text h4{
     font-weight: 500;
@@ -240,6 +245,7 @@ main img{
     opacity: 30%;
 }
 #chat-bar input{
+    font-size: 18px;
     width: 80%;
     height: 30px;
 }
@@ -259,6 +265,7 @@ main img{
     position: relative;
 }
 
+/* menu a tendina */
 .tent {
     position: absolute;
     top: 90%;
@@ -271,4 +278,9 @@ main img{
     font-weight: 500;
     margin: 20px;
     font-size: 16px;
+}
+
+.tent h5:hover {
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }

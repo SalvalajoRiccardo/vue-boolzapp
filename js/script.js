@@ -202,27 +202,14 @@
                     } else {
                         element.visible = false;
                     }
-                    
-                    console.log(element.visible);
                 });
             },
 
-            tF() {
-                if(this.sect == false) {
-                    this.sect == true;
-                } else {
-                    this.sect == false;
-                }
-                console.log(this.sect);
+            // eliminare messaggio
+            remove(i) {
+                this.contacts[this.contatore].messages.splice(i,1)
             }
-            
+
         }
         
     })
-
-
-    
-// <div id="app">
-//   <button @click='toggle = !toggle'> click here </button>
-//   <div v-show='toggle'>showing</div>
-// </div>
