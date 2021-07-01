@@ -79,7 +79,7 @@
                         <div @click="insert(index)" class="flex" v-for="(item, index) in contacts" v-if="item.visible == true"><img :src="item.avatar" alt="contacts.name">
                             <div>
                                 <h4>{{item.name}}</h4>
-                                <h5 class="opa-30">{{item.messages[item.messages.length - 1].text}}</h5>
+                                <h5 class="opa-30">{{item.messages[item.messages.length - 1].text.substring(0, 24) + "..."}}</h5>
                             </div>
                             
                         </div>
