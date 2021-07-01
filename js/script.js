@@ -207,7 +207,12 @@
 
             // eliminare messaggio
             remove(i) {
-                this.contacts[this.contatore].messages.splice(i,1)
+                let conf = confirm('sicuro di volerlo cancellare?')
+                // controllo su messaggio da eliminare
+                if(conf) {
+                    this.contacts[this.contatore].messages.splice(i,1)
+                }
+                
             }
 
         }
