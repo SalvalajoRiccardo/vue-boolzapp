@@ -188,10 +188,10 @@
             // scrivi messaggio
             addMex(obj) {
                 if ( obj ){
-                    this.contacts[this.contatore].messages.push({text:this.newMex, date:this.momento(), status: 'sent'});
+                    this.contacts[this.contatore].messages.push({text:this.newMex, date:this.momento(), status: 'sent', toggle: false});
                     this.newMex = '';
 
-                    setTimeout(function(){ app.contacts[app.contatore].messages.push({text:'ok', date:app.momento(), status: 'rec'})}, 1000);
+                    setTimeout(function(){ app.contacts[app.contatore].messages.push({text:'ok', date:app.momento(), status: 'rec', toggle: false})}, 1000);
                 }
             },
 
@@ -222,6 +222,7 @@
                 }
                 
             },
+
 
         },
 
