@@ -225,24 +225,4 @@
 
         },
 
-        computed: {
-            lastMex() {
-                this.contacts.forEach((item) =>{
-                let posizione = item.messages.length - 1 ;
-                const last = item.messages[posizione].text;
-                item.lastM = last;
-                });
-    
-            }
-        },
-
-        mounted() {
-            this.contacts.forEach((item) =>{
-            let posizione = item.messages.length - 1 ;
-            const last = item.messages[posizione].text;
-            item.lastM = last
-            });
-            
-        }
-        
     })
