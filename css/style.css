@@ -175,6 +175,12 @@ main img{
     height: 30px;
     border: 1px solid #dddddd;
 }
+
+#lista h5 {
+    font-weight: 500;
+    margin-top: 5px;
+    margin-left: 10px;
+}
 /* lista contatti */
 #lista {
     overflow-x:hidden;

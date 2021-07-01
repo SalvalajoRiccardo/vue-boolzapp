@@ -77,7 +77,11 @@
                         </div>
 
                         <div @click="insert(index)" class="flex" v-for="(item, index) in contacts" v-if="item.visible == true"><img :src="item.avatar" alt="contacts.name">
-                            <h4>{{item.name}}</h4>
+                            <div>
+                                <h4>{{item.name}}</h4>
+                                <h5  class="opa-30">{{item.lastM}}</h5>
+                            </div>
+                            
                         </div>
                     </div>
                 </nav>
@@ -90,7 +94,8 @@
                 <div id="chat-box">
                     <div class="flex" v-for="(obj,index) in contacts[contatore].messages">
                         <div class="box-text" :class="(obj.status == 'sent') ? ' sent' : ' recived'">
-                            <h4>{{obj.text}}</h4><span>{{obj.date}}</span>
+                            <h4>{{obj.text}}</h4>
+                            <span>{{obj.date}}</span>
                             <div>
                                 <i @click='obj.toggle = !obj.toggle'  class="fas fa-chevron-down"></i>
                                 <div class="tent" v-show='obj.toggle'>

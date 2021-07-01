@@ -10,6 +10,7 @@
                     name: 'Tullio',
                     avatar: 'img/avatar_1.jpg',
                     visible: true,
+                    lastM: '',
                     messages: [
                         {
                             text: 'ciao tulio, come va?',
@@ -30,11 +31,13 @@
                             toggle: false
                         },
                     ]
+                    
                 },
                 {
                     name: 'Giobanni',
                     avatar: 'img/avatar_3.jpg',
                     visible: true,
+                    lastM: '',
                     messages: [
                         {
                             text: 'ciao, come va?',
@@ -60,6 +63,7 @@
                     name: 'Danielo',
                     avatar: 'img/avatar_4.jpg',
                     visible: true,
+                    lastM: '',
                     messages: [
                         {
                             text: 'ciao, tutto bene con il vaccino?',
@@ -80,6 +84,7 @@
                     name: 'Marcolino',
                     avatar: 'img/avatar_5.jpg',
                     visible: true,
+                    lastM: '',
                     messages: [
                         {
                             text: 'ciao tulio, come va?',
@@ -99,6 +104,7 @@
                     name: 'Barbra',
                     avatar: 'img/avatar_6.jpg',
                     visible: true,
+                    lastM: '',
                     messages: [
                         {
                             text: 'ciao, ricordati di portare i bicchieri domani',
@@ -124,6 +130,7 @@
                     name: 'Jacobbe',
                     avatar: 'img/avatar_7.jpg',
                     visible: true,
+                    lastM: '',
                     messages: [
                         {
                             text: 'ciao jac, come va?',
@@ -155,6 +162,7 @@
                     name:'Cristina',
                     avatar: 'img/avatar_10.jpg',
                     visible: true,
+                    lastM: '',
                     messages: [
                         {
                             text: 'ciao cristina, non ho capito, puoi rispiegare?',
@@ -213,8 +221,28 @@
                     this.contacts[this.contatore].messages.splice(i,1)
                 }
                 
-            }
+            },
 
+        },
+
+        computed: {
+            lastMex() {
+                this.contacts.forEach((item) =>{
+                let posizione = item.messages.length - 1 ;
+                const last = item.messages[posizione].text;
+                item.lastM = last;
+                });
+    
+            }
+        },
+
+        mounted() {
+            this.contacts.forEach((item) =>{
+            let posizione = item.messages.length - 1 ;
+            const last = item.messages[posizione].text;
+            item.lastM = last
+            });
+            
         }
         
     })
